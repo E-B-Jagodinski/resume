@@ -274,7 +274,7 @@
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
 		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
-	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.25\mpwidth]{\textcolor{white}{#1}}} \\
+	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.27\mpwidth]{\textcolor{white}{#1}}} \\
 			\textcolor{maincol}{\textbf{#3}} & \\
 		\end{tabular*}\\[2pt]
 	
@@ -289,6 +289,45 @@
 	}
 	\vspace{2pt}
 }
+
+%----------------------------------------------------------------------------------------
+%	 CV PUBLICATION
+%----------------------------------------------------------------------------------------
+
+% Renders a table and a paragraph (cvtext) wrapped in a parbox (to ensure minimum content
+% is glued together when a pagebreak appears).
+% Additional Information can be passed in text or list form (or other environments).
+% the work you did
+% param 1: time-frame i.e. Sep 14 - Jan 15 etc.
+% param 2:	 event name (job position etc.)
+% param 3: Customer, Employer, Industry
+% param 4: Short description
+% param 5: work done (optional)
+% param 6: technologies include (optional)
+% param 7: achievements (optional)
+\newcommand{\cvpub}[7] {
+	
+	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
+	% if you need more control on page breaks, remove the parbox
+	\parbox{\mpwidth}{
+		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
+	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.27\mpwidth]{\textcolor{white}{#1}}} \\
+			\textcolor{maincol}{#3} & \\
+		\end{tabular*}\\[2pt]
+	
+		%\ifthenelse{\isempty{#4}}{}{
+			%\cvtext{#4}\\
+		%}
+	}
+
+	\ifthenelse{\isempty{#5}}{}{
+		\vspace{4pt}
+		{#5}
+	}
+	\vspace{0pt}
+}
+
+
 
 %----------------------------------------------------------------------------------------
 %	 CV META EVENT
@@ -407,6 +446,8 @@
 
 \cvskill{Fortran} {2+ yrs} {0.4} \\[-8pt]
 
+\cvskill{MATLAB} {4+ yrs} {0.8} \\[-8pt]
+
 \cvskill{Teaching} {5+ yrs} {1} \\[-8pt]
 
 
@@ -438,16 +479,16 @@
 
 \cvevent
 	{\textbf{2017 - Dec. 2022*}}
-	{Ph. D. - Ocean Engineering}
+	{Ph.D. - Ocean Engineering}
 	{FAU - SeaTech Research Center, Dania Beach, FL}
-	{Dissertation: Deep Reinforcement Learning with Image Recognition for Autonomous Control in Fluid Dynamics Simulation}
+	{\textbf{Dissertation:} Autonomous Control with \textbf{\textit{Reinforcement Learning}} in Fluid Dynamics simulations using \textbf{\textit{Convolutional Neural Networks}} and \textbf{\textit{Long Short-Term Memory}} for drag reduction .}
 \vfill\null
 
 \cvevent
     {\textbf{2010 - 2016}}
     {B.S. - Ocean Engineering}
     {Florida Atlantic University- Boca Raton, FL}
-    {Capstone Project: Autonomous surface vehicle capable of GPS navigation and station keeping in dynamic conditions (Electrical Team Lead).}
+    {\textbf{Capstone Project:} Designed and built an \textbf{\textit{autonomous surface vehicle}} capable of GPS navigation and station keeping in dynamic conditions (Electrical Team Lead).}
 \vfill\null
 
 %---------------------------------------------------------------------------------------
@@ -457,11 +498,11 @@
 \vfill\null
 \cvsection{PUBLICATIONS}
 
-\cvevent
-	{\textbf{In Review}}
+\cvpub
+	{\textbf{Submitted 04/2022}}
 	{Data-driven identification of dynamically important regions in turbulent flows using 3D Convolutional Neural Networks}
-	{Status: Submitted (April 2022)}
-	{}
+	{Autonomously identified critical regions in turbulent flow using \textbf{\textit{3D CNN}} and a designed \textbf{\textit{interpretation technique}}.}
+	%{}
 \vfill\null
 
 %\vfill\null
@@ -477,7 +518,7 @@
 	{\textbf{Summer 2018}}
 	{Graduate Intern}
 	{Naval Research Laboratory, Stennis Space Center, MS}
-	{Used OpenFOAM CFD software for simulating rogue wave and wind interaction. Learned to use Linux, High-Performance Computing (U.S. Army's Excalibur) and Numerical Modeling.}
+	{Developed simulations using OpenFOAM CFD software for \textbf{\textit{rogue wave and wind interaction}} using High-Performance Computing.}
 	{}
 \vfill\null
 
@@ -485,7 +526,7 @@
 	{\textbf{05/2014 -04/2015}}
 	{Engineering Technician}
 	{Agilis Measurement Systems, Palm Beach Gardens, FL}
-	{Assembled computer monitoring and signal conditioning systems used on GE turbines for NextEra. Learned data analysis through real-time monitoring of turbine data.}
+	{Assembled \textbf{\textit{computer monitoring}} and \textbf{\textit{signal conditioning}} systems used on GE turbines for NextEra. \textbf{\textit{Analyzed}} real-time turbine data for monthly reports.}
 	{}
 \vfill\null
 
@@ -510,10 +551,9 @@
 \cvsection{EXTRACURRICULAR}
 \vspace{-0.3cm}
 \begin{itemize}
-  \item I \textbf{taught} a full course at FAU (Fluid Dynamics, 2021) and TA'd many more.
-  \item I have \textbf{volunteered} the past two years at an Engineering Camp (2021-2022).
-  \item I was \textbf{interviewed} on local news about FAU Ocean Engineering (2018).
-  \item I have my Advanced and Mixed Gas \textbf{scuba diving certifications}.
+  \item \textbf{Taught} a full course at FAU (Fluid Dynamics, 2021) and TA'd many more.
+  \item \textbf{Volunteered} the past two years at a middle school Engineering Camp (2021-2022).
+  %\item Advanced and Mixed Gas \textbf{scuba diving certifications}.
 \end{itemize}
 \vfill\null
 
