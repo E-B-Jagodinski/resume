@@ -225,10 +225,10 @@
 % Renders a a CV section headline with a nice underline in main color.
 % param 1: section title
 \newcommand{\cvsection}[1] {
-	\vspace{14pt}
+	\vspace{13pt}
 	\cvtext{
-		\textbf{\LARGE{\textcolor{darkcol}{\uppercase{#1}}}}\\[-4pt]
-		\textcolor{maincol}{ \rule{0.1\textwidth}{2pt} } \\
+		\textbf{\LARGE{\textcolor{darkcol}{\uppercase{#1}}}}\\[-6pt]
+		\textcolor{maincol}{ \rule{0.1\textwidth}{2pt} } \vspace{6pt}
 	}
 }
 
@@ -274,9 +274,9 @@
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
 		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
-	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.27\mpwidth]{\textcolor{white}{#1}}} \\
+	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.27\mpwidth]{\textcolor{white}{#1}}} \\[2pt]
 			\textcolor{maincol}{\textbf{#3}} & \\
-		\end{tabular*}\\[2pt]
+		\end{tabular*}\\ [2pt]
 	
 		\ifthenelse{\isempty{#4}}{}{
 			\cvtext{#4}\\
@@ -284,10 +284,11 @@
 	}
 
 	\ifthenelse{\isempty{#5}}{}{
+			\cvtext{#5}\\
 		\vspace{4pt}
-		{#5}
+		
 	}
-	\vspace{2pt}
+	%\vspace{2pt}
 }
 
 %----------------------------------------------------------------------------------------
@@ -346,10 +347,10 @@
 	}
 
 	\ifthenelse{\isempty{#3}}{}{
-		\cvtext{{ \textcolor{darkcol} {#3} }}\\
+		\cvtext{{ \textcolor{darkcol} {#3} }}%\\
 	}
 
-	\cvtext{#4}\\[14pt]
+	\cvtext{#4}%\\[14pt]
 }
 
 %---------------------------------------------------------------------------------------
@@ -392,7 +393,6 @@
 %----------------------------------------------------------------------------------------
 %\includegraphics[width=\linewidth]{untitled.jpg}	%trimming relative to image size
 
-
 \vfill\null
 \cvsection{CONTACT}
 	
@@ -402,7 +402,7 @@
 \icontext{Github}{14}{\href{https://github.com/E-B-Jagodinski}{Github: E-B-Jagodinski}}{black}\\[2pt]
 \icontext{Linkedin}{14}{\href{https://www.linkedin.com/in/eric-jagodinski/}{LinkedIn: eric-jagodinski}}{black}\\[2pt]
 
-%\vfill\null
+\vfill\null
 %\cvqrcode{0.7}
 
 %---------------------------------------------------------------------------------------
@@ -418,16 +418,11 @@
 {A professional certificate through Coursera to prepare, process, analyze, and present data for data-driven decision. (SQL, Tableau, R)}
 
 \cvmetaevent
-{M.S. Ocean Engineering}
-{}
-{2018}
-{Masters En Passant earned while completing courses towards my PhD.}
-
-\cvmetaevent
 {Offshore Engineering Graduate Certificate}
 {}
 {2018}
 {A graduate level certificate specialization. Courses: Advanced Hydrodynamics, Offshore Structures, Hydrodynamics of Ship Design}
+\vfill\null
 
 %---------------------------------------------------------------------------------------
 %	META SKILLS
@@ -452,9 +447,19 @@
 
 
 
-%\vfill\null
+\vfill\null
 %\cvqrcode{0.7}
 
+%---------------------------------------------------------------------------------------
+%	EXTRACURRICULAR
+%----------------------------------------------------------------------------------------
+%\newpage
+\cvsection{INTERESTS}
+
+\begin{itemize}
+\item \textbf{Volunteering} Middle School Engineering Camp (2021-2022)
+\item Advanced and Mixed Gas \textbf{scuba diving certifications}
+\end{itemize}
 
 
 \end{leftcolumn}
@@ -479,16 +484,27 @@
 
 \cvevent
 	{\textbf{2017 - Dec. 2022*}}
-	{Ph.D. - Ocean Engineering}
+	{Ph.D. in Ocean Engineering}
 	{FAU - SeaTech Research Center, Dania Beach, FL}
-	{\textbf{Dissertation:} Autonomous Control with \textbf{\textit{Reinforcement Learning}} in Fluid Dynamics simulations using \textbf{\textit{Convolutional Neural Networks}} and \textbf{\textit{Long Short-Term Memory}} for drag reduction .}
+	{\textbf{Dissertation: Multi-Agent Reinforcement Learning Based Turbulent Flow Control} }
+	{Autonomous Multi-Agent Control with \textbf{\textit{Reinforcement Learning}} in turbulent fluids simulations using \textbf{\textit{Convolutional Neural Networks}} and \textbf{\textit{Long Short-Term Memory}} for drag reduction .}
+\vfill\null
+
+\cvevent
+	{\textbf{2018}}
+	{M.S. in Ocean Engineering}
+	{FAU - SeaTech Research Center, Dania Beach, FL}
+	{Masters  earned En Passant while completing courses for my Ph.D.}
+	{}
 \vfill\null
 
 \cvevent
     {\textbf{2010 - 2016}}
-    {B.S. - Ocean Engineering}
+    {B.S. in Ocean Engineering}
     {Florida Atlantic University- Boca Raton, FL}
     {\textbf{Capstone Project:} Designed and built an \textbf{\textit{autonomous surface vehicle}} capable of GPS navigation and station keeping in dynamic conditions (Electrical Team Lead).}
+    {}
+    {}
 \vfill\null
 
 %---------------------------------------------------------------------------------------
@@ -498,11 +514,13 @@
 \vfill\null
 \cvsection{PUBLICATIONS}
 
-\cvpub
-	{\textbf{Submitted 04/2022}}
+\cvevent
+	{\textbf{In Review}}
 	{Data-driven identification of dynamically important regions in turbulent flows using 3D Convolutional Neural Networks}
+	{Submitted to Journal of Fluid Mechanics}
 	{Autonomously identified critical regions in turbulent flow using \textbf{\textit{3D CNN}} and a designed \textbf{\textit{interpretation technique}}.}
-	%{}
+	{}
+	{}
 \vfill\null
 
 %\vfill\null
@@ -513,6 +531,14 @@
 \vspace{-0.5cm}
 \vfill\null
 \cvsection{WORK EXPERIENCE}
+
+\cvevent
+	{\textbf{Summer 2021}}
+	{Course Instructor}
+	{Florida Atlantic University, Boca Raton, FL}
+	{Taught \textbf{\textit{Fluid Mechanics}} to a class of 30 students in-person and remote. Developed hands-on project template.}
+	{}
+\vfill\null
 
 \cvevent
 	{\textbf{Summer 2018}}
@@ -543,20 +569,6 @@
   \item Presentation \textbf{Convolutional Neural Networks for Identifying Coherent Turbulent Structures.} APS Division of Fluid Dynamics (2019)
 \end{itemize}
 %\vfill\null
-
-%---------------------------------------------------------------------------------------
-%	PERSONAL DETAILS
-%----------------------------------------------------------------------------------------
-\vfill\null
-\cvsection{EXTRACURRICULAR}
-\vspace{-0.3cm}
-\begin{itemize}
-  \item \textbf{Taught} a full course at FAU (Fluid Dynamics, 2021) and TA'd many more.
-  \item \textbf{Volunteered} the past two years at a middle school Engineering Camp (2021-2022).
-  %\item Advanced and Mixed Gas \textbf{scuba diving certifications}.
-\end{itemize}
-\vfill\null
-
 
 % hotfixes to create fake-space to ensure the whole height is used
 \vfill
